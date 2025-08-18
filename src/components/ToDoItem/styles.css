@@ -1,0 +1,28 @@
+.todoitem{
+    background-color: #0a51c2;
+    padding: 30px;
+    min-height: 250px;
+    width: 220px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.todoitem__footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.todoitem__footer__button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgb(6, 6, 6);
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    color:white;
+    padding: 8px;
+    
+}

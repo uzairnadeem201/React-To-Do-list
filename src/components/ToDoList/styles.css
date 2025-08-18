@@ -1,0 +1,11 @@
+.todolist{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+}
+.todolist__items{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
