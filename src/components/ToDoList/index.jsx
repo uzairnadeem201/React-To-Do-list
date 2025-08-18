@@ -1,18 +1,17 @@
 import "./styles.css";
 import ToDoItem from "../ToDoItem";
+import { useToDoContext } from "../../Provider";
 
 const ToDoList = () => {
+  const tasks = useToDoContext().tasks;
+
   return (
     <div className="todolist">
       <h1>Notes</h1>
       <div className="todolist__items">
-        <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
+        {tasks.map((task) => (
+          <ToDoItem key={task.id} task={task} />
+        ))}
       </div>
     </div>
   );
