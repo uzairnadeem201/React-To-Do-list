@@ -6,9 +6,18 @@ const ColorSelector = () => {
   const { addTask } = useToDoContext();
   const colors = ["#d2856f6a", "#42eb615c", "#7188ed93", "#F0F0F0"];
   const [appearColorButtons, setAppearColorButtons] = useState(false);
+  const [animateOut, setAnimateOut] = useState(false);
 
   const handleButtonClick = () => {
-    setAppearColorButtons(!appearColorButtons);
+    if (appearColorButtons) {
+      setAnimateOut(true);
+      setTimeout(() => {
+        setAppearColorButtons(false);
+        setAnimateOut(false);
+      }, 1000);
+    } else {
+      setAppearColorButtons(true);
+    }
   };
 
   const handleAddTask = (color) => {
@@ -32,11 +41,20 @@ const ColorSelector = () => {
 
         {appearColorButtons && (
           <div className="colorselector__colorbuttons">
-            {colors.map((color) => (
+            {colors.map((color, index) => (
               <button
                 key={color}
                 className="colorselector__button-color"
-                style={{ backgroundColor: color }}
+                style={{
+                  backgroundColor: color,
+                  transform: !animateOut
+                    ? `translateY(${100 + index * 20}px)`
+                    : `translateY(-${100 + index * 20}px)`,
+                  animationDelay: `${index * 0.2}s`,
+                  animationName: animateOut ? "rise" : "drop",
+                  animationDuration: "0.5s",
+                  animationFillMode: "forwards",
+                }}
                 onClick={() => {
                   handleAddTask(color);
                   setAppearColorButtons(false);
