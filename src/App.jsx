@@ -1,7 +1,7 @@
 import "./App.css";
 import ColorSelector from "./components/ColorSelector";
 import ToDoList from "./components/ToDoList";
-import ToDoContextProvider from "./Providers";
+import ToDoContextProvider from "./Provider";
 import Header from "./components/Header";
 
 function App() {

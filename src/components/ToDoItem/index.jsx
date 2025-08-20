@@ -1,7 +1,7 @@
 import "./styles.css";
 import { useState } from "react";
 import { Edit, Save, Calendar } from "lucide-react";
-import { useToDoContext } from "../../Providers";
+import { useToDoContext } from "../../Provider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
