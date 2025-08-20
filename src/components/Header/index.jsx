@@ -1,9 +1,9 @@
 import { Search } from "lucide-react";
 import { useToDoContext } from "../../Provider";
-import './styles.css';
+import "./styles.css";
 
 const Header = () => {
-  const { setSearchQuery} = useToDoContext();
+  const { setSearchQuery } = useToDoContext();
 
   const handleQuery = (e) => {
     setSearchQuery(e.target.value);
@@ -11,12 +11,10 @@ const Header = () => {
 
   return (
     <div className="header">
-      <Search className="mt-4" />
-      <input
-        placeholder="Search"
-        className="input"
-        onChange={handleQuery}
-      />
+      <div className="search__container">
+        <Search className="search" />
+      </div>
+      <input placeholder="Search" className="input" onChange={handleQuery} />
     </div>
   );
 };

@@ -43,7 +43,7 @@ const ToDoItem = ({ task }) => {
             onKeyDown={handleKeyDown}
           />
         ) : (
-          <h3>{task.text}</h3>
+          <h3 className='todoitem__text--size'>{task.text}</h3>
         )}
       </div>
 

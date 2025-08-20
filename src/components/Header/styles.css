@@ -3,3 +3,7 @@
     flex-direction: row;
     gap: 10px;
 }
+.search__container{
+    margin-top: 16px;
+    display:block;
+}

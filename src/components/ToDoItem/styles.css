@@ -1,7 +1,7 @@
 .todoitem{
     padding: 30px;
-    min-height: 250px;
-    width: 250px;
+    min-height: 200px;
+    width: 180px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -25,16 +25,24 @@
     cursor: pointer;
     margin-top: 10px;
     color:white;
-    padding: 8px;
     
 }
-.todoitem__input{
-    outline: none;
+.todoitem__input {
+  outline: none;
+  border: none;   
+  background: none;
+  box-shadow: none;
+  font-size: larger;
 }
 .todoitem__date{
     display: flex;
     gap:5px;
     
+}
+
+.todoitem__text--size{
+    font-size: 25px;
+
 }
 
 @keyframes appear {
