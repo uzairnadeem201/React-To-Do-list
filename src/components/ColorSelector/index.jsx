@@ -1,6 +1,6 @@
 import "./styles.css";
 import { useState, useContext } from "react";
-import { useToDoContext } from "../../Providers";
+import { useToDoContext } from "../../Provider";
 
 const ColorSelector = () => {
   const { addTask } = useToDoContext();

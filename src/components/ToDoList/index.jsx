@@ -1,6 +1,6 @@
 import "./styles.css";
 import ToDoItem from "../ToDoItem";
-import { useToDoContext } from "../../Providers";
+import { useToDoContext } from "../../Provider";
 
 const ToDoList = () => {
   const tasks = useToDoContext().tasks;
