@@ -1,9 +1,11 @@
 import "./styles.css";
 import ToDoItem from "../ToDoItem";
 import { useToDoContext } from "../../Provider";
+import { useSelector } from "react-redux";
+import { selectFilteredTasks } from "../../redux/selector"; 
 
 const ToDoList = () => {
-  const tasks = useToDoContext().tasks;
+  const tasks = useSelector(selectFilteredTasks)
 
   return (
     <div className="todolist">

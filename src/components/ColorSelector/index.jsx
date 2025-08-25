@@ -1,9 +1,10 @@
 import "./styles.css";
 import { useState, useContext } from "react";
-import { useToDoContext } from "../../Provider";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../redux/todoslice";
 
 const ColorSelector = () => {
-  const { addTask } = useToDoContext();
+  const dispatch = useDispatch()
   const colors = ["#d2856f6a", "#42eb615c", "#7188ed93", "#F0F0F0"];
   const [appearColorButtons, setAppearColorButtons] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
@@ -27,7 +28,7 @@ const ColorSelector = () => {
       text: "New Task",
       createdAt: new Date(),
     };
-    addTask(newTask);
+    dispatch(addTask(newTask));
     setAppearColorButtons(false);
   };
 

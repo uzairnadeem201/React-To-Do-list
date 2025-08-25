@@ -2,18 +2,20 @@ import "./styles.css";
 import { useState } from "react";
 import { Edit, Save, Calendar } from "lucide-react";
 import { useToDoContext } from "../../Provider";
+import { useDispatch } from "react-redux";
+import {editTask} from '../../redux/todoslice'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const ToDoItem = ({ task }) => {
-  const { editTask } = useToDoContext();
+  const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(task.text);
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      editTask(task, newText);
+      dispatch(editTask({task, newText}));
       setIsEditing(false);
     } else if (e.key === "Escape") {
       setIsEditing(false);
@@ -21,12 +23,12 @@ const ToDoItem = ({ task }) => {
   };
 
   const handleSaveClick = () => {
-    editTask(task, newText);
+    editTask({task, newText});
     setIsEditing(false);
   };
 
   const handleDateChange = (date) => {
-    editTask(task, undefined, date);
+    dispatch(editTask({task, undefined, date}));
     setShowDatePicker(false);
   };
 

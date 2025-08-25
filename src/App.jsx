@@ -2,6 +2,8 @@ import "./App.css";
 import ColorSelector from "./components/ColorSelector";
 import ToDoList from "./components/ToDoList";
 import ToDoContextProvider from "./Provider";
+import { Provider } from "react-redux";
+import store from './redux/store'
 import Header from "./components/Header";
 
 function App() {
@@ -9,7 +11,7 @@ function App() {
   //header
   //todolist
   return (
-    <ToDoContextProvider>
+    <Provider store={store}>
       <div className="app">
         <div className="app__container">
           <ColorSelector />
@@ -19,7 +21,7 @@ function App() {
           </div>
         </div>
       </div>
-    </ToDoContextProvider>
+    </Provider>
   );
 }
 

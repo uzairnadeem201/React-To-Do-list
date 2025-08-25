@@ -1,12 +1,14 @@
 import { Search } from "lucide-react";
 import { useToDoContext } from "../../Provider";
+import { useDispatch } from "react-redux";
+import { setSearchQuery } from "../../redux/todoslice";
 import "./styles.css";
 
 const Header = () => {
-  const { setSearchQuery } = useToDoContext();
+  const dispatch = useDispatch();
 
   const handleQuery = (e) => {
-    setSearchQuery(e.target.value);
+    dispatch(setSearchQuery(e.target.value));
   };
 
   return (
